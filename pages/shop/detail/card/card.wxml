@@ -1,0 +1,12 @@
+<view class="shop">
+  <image src='http://120.77.45.86/media/shop/13/default_Q3qhqPo.jpg'></image>
+  <text class='name'>启明汽车</text>
+  <text>地址：巫山</text>
+  <text>电话：13300000000</text>
+  <text>联系人:anyone</text>
+  <view>
+    <button type='primary' style='margin-top:1%' bindtap='goToInfo'>店铺详情</button>
+    <button type='primary' style='margin-top:1%' bindtap='goToCmt'>查看评价</button>
+    <button type="warn" style='margin-top:1%' bindtap='goToAct'>近期活动</button>
+  </view> 
+</view>

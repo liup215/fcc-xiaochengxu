@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/shop/shop",
+    "pages/supply/supply",
+    "pages/activity/activity",
+    "pages/group/group",
+    "pages/user/user",
+    "pages/shop/detail/card/card",
+    "pages/shop/detail/information/information",
+    "pages/shop/detail/commit/commit",
+    "pages/supply/detail/detail",
+    "pages/supply/detail/information/information",
+    "pages/supply/detail/commit/commit",
+    "pages/activity/detail/detail",
+    "pages/group/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "商户"
+      },
+      {
+        "pagePath": "pages/supply/supply",
+        "text": "供求"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/group/group",
+        "text": "圈子"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

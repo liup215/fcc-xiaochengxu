@@ -1,0 +1,16 @@
+/* pages/supply/detail/detail.wxss */
+.shop{
+  display: flex;
+  flex-direction: column;
+}
+.shop .name{
+  font-weight: bold;
+}
+
+.more{
+  margin-top: 2em;
+}
+
+.more .title{
+  font-weight: bold;
+}

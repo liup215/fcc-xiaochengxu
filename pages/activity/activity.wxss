@@ -1,0 +1,26 @@
+/* pages/activity/activity.wxss */
+.box {
+  display: flex;
+  flex-direction:column;
+}
+
+.box .item{
+  padding-bottom: 1em;
+  align-self: center;
+}
+
+
+.box .item .title{
+  display: flex;
+  flex-direction: column;
+}
+
+.box .item .title .name{
+  color: #337AC6;
+  font-weight: bold;
+}
+
+.box .item .title .tip{
+  color: #666666;
+  font-size: 0.8em;
+}

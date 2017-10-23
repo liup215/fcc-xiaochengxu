@@ -1,0 +1,12 @@
+<!--pages/community/community.wxml-->
+<view  class="box">
+  <view id="1" class='item' data-id="222" bindtap='getDetail'>
+    <image src='http://120.77.45.86/media/shop/13/default_Q3qhqPo.jpg'></image>
+    <view class="title">
+      <text class="name">内部测试小组</text>
+      <text class="tip">创建人：admin</text>
+      <text class="tip">当前人数：2</text>
+      <text class="tip">成立日期：2017-05-30</text>
+    </view>
+  </view>
+</view>

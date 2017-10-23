@@ -1,0 +1,28 @@
+<!--pages/group/detail/detail.wxml-->
+<view class="card">
+  <image class="avator" src='http://120.77.45.86/media/shop/13/default_Q3qhqPo.jpg'></image>
+  <view class="title">
+    <text class='name'>内部测试小组</text>
+    <view class="info">
+      <text>创建于2017-05-30</text>
+      <text>组长 admin</text>
+    </view>
+    <button>加入小组</button>
+  </view>
+</view>
+<view class='note'>
+  <view class='item'>
+    <text class="title">测试帖子</text>
+    <view class="tip">
+      <text>admin 于 2017-05-30发布</text>
+      <text>1 回应</text>
+    </view>
+  </view>
+  <view class='item'>
+    <text class="title">测试帖子</text>
+    <view class="tip">
+      <text>admin 于 2017-05-30发布</text>
+      <text>1 回应</text>
+    </view>
+  </view>
+</view>

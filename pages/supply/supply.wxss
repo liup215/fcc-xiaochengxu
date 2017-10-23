@@ -1,0 +1,26 @@
+/* pages/supply/supply.wxss */
+.box {
+  display: flex;
+  flex-direction:column;
+  padding-left: 2%;
+  background-color: #F5F5F5;
+}
+
+.box .item{
+  border-bottom:1px #D3D3D3 dashed;
+}
+
+.box .item .title{
+  display: flex;
+  flex-direction: column;
+}
+
+.box .item .title .name{
+  color: #337AC6;
+  font-weight: bold;
+}
+
+.box .item .title .tip{
+  color:#337AC6;
+  font-size: 0.8rem;
+}

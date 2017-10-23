@@ -1,0 +1,12 @@
+<!--pages/activity/detail/detail.wxml-->
+<view class="shop">
+  <image src='http://120.77.45.86/media/shop/13/default_Q3qhqPo.jpg'></image>
+  <text class='name'>启明汽车</text>
+  <text>活动时间：2017-07-19 06:00 开始</text>
+  <text>活动地址：重庆市渝北区金渝大道68号新科国际</text>
+  <text>邀请人数：168 人</text>
+  <text>门票类型：免费</text>
+  <view>
+    <button type='primary' style='margin-top:1%' bindtap='goToInfo'>立刻报名</button>
+  </view> 
+</view>

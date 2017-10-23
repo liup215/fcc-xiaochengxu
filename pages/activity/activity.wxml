@@ -1,0 +1,11 @@
+<!--pages/activity/activity.wxml-->
+<view  class="box">
+  <view id="1" class='item' data-id="222" bindtap='getDetail'>
+    <image src='http://120.77.45.86/media/shop/13/default_Q3qhqPo.jpg'></image>
+    <view class="title">
+      <text class="name">帝航润滑油</text>
+      <text class="tip">时间：2017-09-28</text>
+      <text class="tip">地点：重庆市渝北区金渝大道68号新科国际</text>
+    </view>
+  </view>
+</view>
