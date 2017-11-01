@@ -1,1 +1,4 @@
-店铺详情
+<text>{{description}}</text>
+<view wx:for = "{{images}}">
+  <image class="avator" src="{{item.url}}"></image>
+</view>

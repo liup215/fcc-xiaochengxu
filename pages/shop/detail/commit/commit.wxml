@@ -1,2 +1,25 @@
 <!--pages/shop/detail/commit/commit.wxml-->
-<view>查看评价</view>
+<view class="card">
+  <image class="avator" src='{{image}}'></image>
+  <view class="title">
+    <text class='name'>{{shop.name}}</text>
+    <view class="info">
+      <text>地址：{{shop.address}}</text>
+      <text>电话：{{shop.tel}}</text>
+      <text>联系人： {{shop.manager}}</text>
+    </view>
+    <button >我要评价</button>
+  </view>
+</view>
+
+<view class='note'>
+  <view class='item' wx:for="{{comments}}">
+    <text class="title">{{item.user}}</text>
+    <text class="content">{{item.content}}</text>
+    <view class="tip">
+      <text>{{item.editDate}}</text>
+      <text>顶（{{item.like}}）</text>
+      <text>踩（{{item.dislike}}）</text>
+    </view>
+  </view>
+</view>

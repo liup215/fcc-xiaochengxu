@@ -1,4 +1,8 @@
 // pages/shop/shop.js
+const app = getApp();
+var appUrl = app.globalData.appUrl;
+var devUrl = app.globalData.devUrl;
+
 Page({
 
   /**
@@ -26,7 +30,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.showLoading({
+      title: '加载中。。。',
+    })
+    wx.request({
+      url: devUrl + "shop/list",
+      success: function (res) {
+        var shops = res.data.data;
+        _this.setData({
+          shops:shops
+        })
+        wx.hideLoading();
+      },
+      error:function(err){
+        console.log(err)
+      }
+     });
   },
 
   /**
@@ -65,9 +85,9 @@ Page({
   },
 
   getDetail: function (event) {
-    console.log(event.currentTarget.dataset);
+    var dataset = event.target.dataset;
     wx.navigateTo({
-      url: './detail/card/card',
+      url: './detail/card/card?shopId='+dataset.id,
     })
   }
 })

@@ -9,6 +9,9 @@
   align-self: center;
 }
 
+.box .item .avator{
+  width: 18em;
+}
 
 .box .item .title{
   display: flex;

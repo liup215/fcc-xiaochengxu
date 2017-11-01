@@ -4,6 +4,7 @@ App({
     
   },
   globalData: {
-
+    appUrl:"http://www.51fcc.com/",
+    devUrl:"http://localhost/"
   }
 })

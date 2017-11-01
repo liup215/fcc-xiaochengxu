@@ -1,4 +1,9 @@
 // pages/shop/detail/commit/commit.js
+const app = getApp();
+var appUrl = app.globalData.appUrl;
+var devUrl = app.globalData.devUrl;
+var shopId = null;
+
 Page({
 
   /**
@@ -12,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    shopId = options.shopId;
   },
 
   /**
@@ -26,7 +31,40 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.showLoading({
+      title: '加载中。。。',
+    })
+    wx.request({
+      url: devUrl + "shop/detail?shopId=" + shopId,
+      success: function (res) {
+        _this.setData({
+          shop: res.data.data
+        })
+
+      }
+    })
+
+    wx.request({
+      url: devUrl + "shop/shopImages?shopId=" + shopId,
+      success: function (res) {
+        var image = appUrl + "media/" + res.data.data[0].url;
+        _this.setData({
+          image: image
+        })
+        wx.hideLoading();
+      }
+    })
+
+    wx.request({
+      url: devUrl + "shop/comment?shopId=" + shopId,
+      success:function(res){
+        var comments = res.data.data;
+        _this.setData({
+          comments:comments
+        })
+      }
+    })
   },
 
   /**

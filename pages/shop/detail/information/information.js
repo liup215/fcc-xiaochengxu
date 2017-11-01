@@ -1,4 +1,10 @@
 // pages/shop/detail/information/information.js
+const app = getApp();
+var appUrl = app.globalData.appUrl;
+var devUrl = app.globalData.devUrl;
+
+var shopId = null;
+
 Page({
 
   /**
@@ -12,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    shopId = options.shopId;
   },
 
   /**
@@ -26,7 +32,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var _this = this;
+    wx.showLoading({
+      title: '加载中。。。',
+    })
+    wx.request({
+      url: devUrl + "shop/detail?shopId=" + shopId,
+      success:function(res){
+        _this.setData({
+          description:res.data.data.description
+        })
+      }
+    })
 
+    wx.request({
+      url: devUrl + "shop/shopImages?shopId=" + shopId,
+      success: function(res){
+        var images = res.data.data;
+        for(var i=0;i<images.length;i++){
+          images[i].url = appUrl + "media/" + images[i].url;
+        }
+        
+        _this.setData({
+          images:images
+        })
+        wx.hideLoading();
+      }
+    })
   },
 
   /**

@@ -7,10 +7,14 @@
   font-weight: bold;
 }
 
-.more{
+.shop .avator{
+  width: 20em;
+}
+
+/* .more{
   margin-top: 2em;
 }
 
 .more .title{
   font-weight: bold;
-}
+} */
