@@ -1,18 +1,24 @@
 // pages/supply/detail/detail.js
+const app = getApp();
+var appUrl = app.globalData.appUrl;
+var devUrl = app.globalData.devUrl;
+
+var bizId = null;
+var biz = null;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    bizId = options.bizId;
   },
 
   /**
@@ -26,7 +32,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.showLoading({
+      title: '加载中。。。',
+    })
+
+    wx.request({
+      url: devUrl + "biz/detail?bizId=" + bizId,
+      success:function(res){
+        biz = res.data.data
+        _this.setData({
+          biz:biz,
+          types:biz.type
+        })
+        wx.hideLoading();
+      }
+    })
+
+
   },
 
   /**
@@ -62,5 +85,17 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  cnctSolder : function(){
+    wx.makePhoneCall({
+      phoneNumber: biz.tel,
+    })
+  },
+
+  goToCmt : function(){
+    wx.navigateTo({
+      url: './commit/commit?bizId=' + bizId,
+    })
   }
 })

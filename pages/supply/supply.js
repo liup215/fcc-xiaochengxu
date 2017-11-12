@@ -1,4 +1,8 @@
 // pages/supply/supply.js
+const app = getApp();
+var appUrl = app.globalData.appUrl;
+var devUrl = app.globalData.devUrl;
+
 Page({
 
   /**
@@ -26,7 +30,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+   var _this = this;
+   wx.showLoading({
+     title: '加载中。。。',
+   })
+
+   wx.request({
+     url: devUrl + "biz/list?page=0&pageSize=30",
+     success:function(res){
+       var biz = res.data.data;
+       _this.setData({
+         biz:biz
+       })
+       wx.hideLoading();
+     }
+   })
   },
 
   /**
@@ -64,9 +82,11 @@ Page({
   
   },
 
-  getDetail: function(){
+  getDetail: function(event){
+    var bizId = event.currentTarget.dataset.id;
+
     wx.navigateTo({
-      url: './detail/detail',
+      url: './detail/detail?bizId=' + bizId,
     })
   }
 })

@@ -1,4 +1,9 @@
 // pages/supply/detail/commit/commit.js
+const app = getApp();
+var appUrl = app.globalData.appUrl;
+var devUrl = app.globalData.devUrl;
+var bizId = null;
+
 Page({
 
   /**
@@ -12,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+   bizId = options.bizId;
   },
 
   /**
@@ -26,7 +31,40 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var _this = this;
+    wx.showLoading({
+      title: '加载中。。。',
+    })
+    wx.request({
+      url: devUrl + "biz/detail?bizId=" + bizId,
+      success: function (res) {
+        _this.setData({
+          biz: res.data.data
+        })
+
+      }
+    })
+
+    wx.request({
+      url: devUrl + "biz/bizImage?bizId=" + bizId,
+      success: function (res) {
+        var image = appUrl + res.data.data[0].url;
+        _this.setData({
+          image: image
+        })
+        wx.hideLoading();
+      }
+    })
+
+    wx.request({
+      url: devUrl + "biz/comment?bizId=" + bizId,
+      success: function (res) {
+        var comments = res.data.data;
+        _this.setData({
+          comments: comments
+        })
+      }
+    })
   },
 
   /**

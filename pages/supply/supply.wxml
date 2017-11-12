@@ -1,20 +1,12 @@
 <!--pages/supply/supply.wxml-->
 <!--pages/shop/shop.wxml-->
 <view  class="box">
-  <view id="1" class='item' data-id="222" bindtap='getDetail'>
-    <view class="title">
-      <text class="name">帝航润滑油</text>
-      <text class="abstract">新BMWx1 2018款，强劲上市 </text>
-      <text class="tip">anyone 于 2017-09-28 发布</text>
-      <text class="tip">5 人浏览</text>
-    </view>
-  </view>
-  <view id="1" class='item' data-id="222" bindtap='getDetail'>
-    <view class="title">
-      <text class="name">帝航润滑油</text>
-      <text class="abstract">新BMWx1 2018款，强劲上市 </text>
-      <text class="tip">巫山/2017-09-28</text>
-      <text class="tip">5 人浏览</text>
+  <view class="item" wx:for="{{biz}}" >
+    <view class='title' data-id="{{item.id}}" bindtap='getDetail'>
+      <text class='name'>{{item.title}}</text>
+      <text class="abstract">{{item.content}} </text>
+      <text class="tip">{{item.user}} 于 {{item.createDate}} 发布</text>
+      <text class="tip">{{item.view}} 人浏览</text>
     </view>
   </view>
 </view>

@@ -1,14 +1,17 @@
 <!--pages/supply/detail/detail.wxml-->
 <view class="shop">
-  <text class='name'>启明汽车</text>
-  <text>5 次浏览</text>
-  <text>区域：重庆运通欣宝</text>
-  <text>所属分类：二手 电子产品</text>
-  <text>价格：--</text>
+  <text class='name'>{{biz.title}}</text>
+  <text>{{biz.view}} 次浏览</text>
+  <text>区域：{{biz.area}}</text>
+  <view class="type">
+    <text>所属分类：</text>
+    <view wx:for="{{types}}">
+      <text>{{item}}/</text>
+    </view>
+  </view> 
+  <text>价格：{{biz.price}}</text>
   <view>
     <button type='primary' style='margin-top:1%' bindtap='cnctSolder'>联系卖家</button>
-    <button type='primary' style='margin-top:1%' bindtap='goToInfo'>商品详情</button>
     <button type='primary' style='margin-top:1%' bindtap='goToCmt'>查看评价</button>
-    <button type="warn" style='margin-top:1%' bindtap='goToAct'>举报违规</button>
   </view> 
 </view>

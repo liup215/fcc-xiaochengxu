@@ -1,2 +1,26 @@
 <!--pages/supply/detail/commit/commit.wxml-->
-<text>pages/supply/detail/commit/commit.wxml</text>
+<view class="card">
+  <image class="avator" src='{{image}}'></image>
+  <view class="title">
+    <text class='name'>{{biz.name}}</text>
+    <view class="info">
+      <text>价格：{{biz.price}}</text>
+      <text>地址：{{biz.area}}</text>
+      <text>电话：{{biz.tel}}</text>
+      <text>联系人： {{biz.seller}}</text>
+    </view>
+    <button >我要评价</button>
+  </view>
+</view>
+
+<view class='note'>
+  <view class='item' wx:for="{{comments}}">
+    <text class="title">{{item.user}}</text>
+    <text class="content">{{item.content}}</text>
+    <view class="tip">
+      <text>{{item.editDate}}</text>
+      <text>顶（{{item.like}}）</text>
+      <text>踩（{{item.dislike}}）</text>
+    </view>
+  </view>
+</view>
